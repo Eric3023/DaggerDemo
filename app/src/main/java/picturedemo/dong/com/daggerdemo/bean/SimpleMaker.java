@@ -2,21 +2,26 @@ package picturedemo.dong.com.daggerdemo.bean;
 
 import javax.inject.Inject;
 
+import picturedemo.dong.com.daggerdemo.interfaces.A;
+import picturedemo.dong.com.daggerdemo.interfaces.B;
+
 /**
  * Created by Dong on 2016/12/7.
  */
 
 public class SimpleMaker implements CoffeeMaker{
 
-    Cooker cooker;  //现在需要咖啡师来制作咖啡了
+    private Cooker cookerA;
+    private Cooker cookerB;
 
     @Inject
-    public SimpleMaker(Cooker cooker){
-        this.cooker = cooker;
+    SimpleMaker(@A Cooker cookerA, @B Cooker cookerB){
+        this.cookerA = cookerA;
+        this.cookerB=cookerB;
     }
 
     @Override
     public String makeCoffee() {
-        return cooker.make();
+        return cookerA.make()+"\n\n"+cookerB.make();
     }
 }
