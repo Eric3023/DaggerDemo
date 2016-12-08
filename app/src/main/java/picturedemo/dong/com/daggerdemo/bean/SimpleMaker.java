@@ -2,8 +2,8 @@ package picturedemo.dong.com.daggerdemo.bean;
 
 import javax.inject.Inject;
 
-import picturedemo.dong.com.daggerdemo.interfaces.A;
-import picturedemo.dong.com.daggerdemo.interfaces.B;
+import picturedemo.dong.com.daggerdemo.qulifier.A;
+import picturedemo.dong.com.daggerdemo.qulifier.B;
 
 /**
  * Created by Dong on 2016/12/7.
